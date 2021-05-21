@@ -1,6 +1,6 @@
-import { ConnectionClient } from 'ssh/ConnectionClient'
+import { ConnectionClient } from '../ssh/ConnectionClient'
 import { InputAttributes, SFTPStream } from 'ssh2-streams'
-import { createLogger } from 'utils/Logger'
+import { createLogger } from '../utils/Logger'
 import { Logger } from 'winston'
 import { normalize } from 'path'
 import { Storage, Bucket } from '@google-cloud/storage'

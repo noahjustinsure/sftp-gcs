@@ -2,7 +2,7 @@ import { normalize } from 'path'
 import { SFTP_STATUS_CODE } from 'ssh2'
 import { FileEntry, InputAttributes } from 'ssh2-streams'
 import { inspect } from 'util'
-import { fileLongEntry } from 'utils/helpers'
+import { fileLongEntry } from '../../utils/helpers'
 import { SFTPSession } from '../SFTPSession'
 import { MODE_DIR, MODE_FILE } from './constants'
 

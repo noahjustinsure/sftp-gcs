@@ -1,7 +1,7 @@
 import ssh2 from 'ssh2'
 import fs from 'fs'
 import { createLogger } from './utils/Logger'
-import { ConnectionClient } from 'ssh/ConnectionClient'
+import { ConnectionClient } from './ssh/ConnectionClient'
 import { ConnectionOptions } from '@/types'
 
 /**

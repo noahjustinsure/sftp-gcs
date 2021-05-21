@@ -1,9 +1,9 @@
 import { ConnectionOptions, UserData } from '@/types'
 import { inspect } from 'util'
-import { createLogger } from 'utils/Logger'
+import { createLogger } from './utils/Logger'
 import { createServer } from './server'
 import { config } from 'dotenv'
-import { loadConfigData } from '@/utils/helpers'
+import { loadConfigData } from './utils/helpers'
 
 config()
 

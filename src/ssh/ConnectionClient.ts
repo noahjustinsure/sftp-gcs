@@ -1,5 +1,5 @@
 import { Connection } from 'ssh2'
-import { createLogger } from 'utils/Logger'
+import { createLogger } from '../utils/Logger'
 import { Logger } from 'winston'
 import { Authenticator } from './Authenticator'
 import { inspect } from 'util'
