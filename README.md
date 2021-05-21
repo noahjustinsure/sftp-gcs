@@ -5,6 +5,7 @@ This is a fork of [kolban-google/sftp-gcs](https://github.com/kolban-google/sftp
 ## Usage
 
 -  First create `.env` in the root file, see description of the variables below.
+-  Add user data. See `users.example.json` for examles.
 -  `npm install`
 -  `npm run build && npm start` OR `npm run dev`
 
