@@ -1,0 +1,4 @@
+[
+	["test", { "bucketName": "test-bucket", "password": "test-password" }],
+	["prod", { "bucketName": "prod-bucket", "password": "prod-password" }]
+]

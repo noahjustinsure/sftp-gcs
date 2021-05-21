@@ -1,0 +1,4 @@
+[
+	{ "keyPath": "allowedkeys/prod_rsa.pub", "bucketName": "prod-bucket" },
+	{ "keyPath": "allowedkeys/test_rsa.pub", "bucketName": "test-bucket" }
+]
