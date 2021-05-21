@@ -4,7 +4,16 @@
 	"description": "An SFTP server backed by Google Cloud Storage.",
 	"main": "sftp-gcs.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build-ts": "tsc --skipLibCheck",
+		"build": "npm run build-ts",
+		"debug": "ts-node src/index.ts --inspect=5858",
+		"dev": "export MODE=DEV && nodemon --inspect=5858 -e ts --exec \"node -r ts-node/register -r tsconfig-paths/register\" ./src/index.ts",
+		"serve": "node dist/index.js",
+		"lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet --fix",
+		"start": "node dist/index.js",
+		"test": "jest --silent --verbose --testPathIgnorePatterns=\"tests/api/*\"",
+		"testwatch:silent": "npm run testwatch -- --silent",
+		"testwatch": "jest --watchAll --testPathIgnorePatterns=\"tests/api/*\""
 	},
 	"author": {
 		"name": "Neil Kolban",
@@ -18,12 +27,22 @@
 	"dependencies": {
 		"@google-cloud/logging-winston": "^4.0.1",
 		"@google-cloud/storage": "^5.5.0",
+		"dotenv": "^9.0.2",
 		"ssh2": "^0.8.9",
 		"ssh2-streams": "^0.4.10",
+		"tsconfig-paths": "^3.9.0",
 		"winston": "^3.3.3",
 		"yargs": "^16.1.1"
 	},
 	"devDependencies": {
-		"prettier": "^2.2.1"
+		"@types/node": "^12.19.7",
+		"@types/ssh2": "^0.5.46",
+		"nodemon": "^2.0.7",
+		"prettier": "^2.2.1",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.2.3"
+	},
+	"_moduleAliases": {
+		"@": "dist"
 	}
 }

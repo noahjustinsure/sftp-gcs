@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"allowJs": true,
+		"sourceMap": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "src",
+		"declaration": true,
+		"resolveJsonModule": true,
+		"target": "ESNext",
+		"lib": ["ES2020"],
+		"outDir": "dist",
+		"esModuleInterop": true,
+		"inlineSources": true,
+		"sourceRoot": "/",
+		"paths": {
+			"@/*": ["./*"]
+		}
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/*.test.ts", "**/*.spec.ts", "**/*.test.js", "**/*.spec.js"]
+}
