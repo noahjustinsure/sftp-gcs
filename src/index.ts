@@ -1,35 +1,14 @@
-import { AllowedKey, ConnectionOptions, UserData } from '@/types'
+import { ConnectionOptions, UserData } from '@/types'
 import { inspect } from 'util'
 import { createLogger } from 'utils/Logger'
 import { createServer } from './server'
 import { config } from 'dotenv'
-import fs from 'fs'
-import { utils } from 'ssh2'
+import { loadConfigData } from '@/utils/helpers'
 
 config()
 
 const run = async () => {
-	// ! You should REALLY think of how you store these files,
-	// ! because if this leaks you're screwed
-	const userData = process.env.USER_FILE
-		? JSON.parse((await fs.promises.readFile(process.env.USER_FILE)).toString())
-		: []
-
-	const keys: { keyPath: string; bucketName: string }[] = process.env.PUB_KEY_FILE
-		? JSON.parse((await fs.promises.readFile(process.env.PUB_KEY_FILE)).toString())
-		: []
-
-	const allowedKeys: AllowedKey[] = []
-
-	for (const { keyPath, bucketName } of keys) {
-		const key = utils.parseKey(fs.readFileSync(keyPath))
-
-		if (key instanceof Error) throw key
-
-		allowedKeys.push({ key: Array.isArray(key) ? key[0] : key, bucketName })
-	}
-
-	console.log(allowedKeys)
+	const { allowedKeys, userData } = await loadConfigData(process.env.USER_FILE, process.env.PUB_KEY_FILE)
 
 	const options: ConnectionOptions = {
 		defaultBucket: process.env.DEFAULT_BUCKET || 'default',
