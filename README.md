@@ -2,6 +2,24 @@
 
 This is a fork of [kolban-google/sftp-gcs](https://github.com/kolban-google/sftp-gcs). See his full ReadMe below, note that the arguments are disabled in this fork.
 
+## Usage
+
+-  First create `.env` in the root file, see description of the variables below.
+-  `npm install`
+-  `npm run build && npm start` OR `npm run dev`
+
+### Environment variables
+
+| Name           | Description                                        | Required | Default value                              |
+| -------------- | -------------------------------------------------- | -------- | ------------------------------------------ |
+| KEY_FILE       | Path to the service account credential file        | No       | process.env.GOOGLE_APPLICATION_CREDENTIALS |
+| PORT           | Port where the server should be exposed            | No       | 22                                         |
+| DEBUG_LEVEL    | Which logs should be generated                     | No       | 'info'                                     |
+| USER_FILE      | Path to the file where the user data is located    | No       | ''                                         |
+| PUB_KEY_FILE   | Path to the file where the public keys are located | No       | ''                                         |
+| IP_PATTERN     | Pattern of what IP adresses to allow to connect    | No       | '0.0.0.0'                                  |
+| DEFAULT_BUCKET | Bucket to use when authType is "none"              | No       | 'default'                                  |
+
 ## Original Readme
 
 SFTP is the ability to transfer files using a protocol built on top of SSH. Currently, GCP does not have any pre-supplied products to be able to use SFTP to move files to or from Google Cloud Storage (GCS). There are a number of 3rd party products that are available from GCP marketplace that do offer this ability.
