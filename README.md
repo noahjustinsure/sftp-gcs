@@ -13,6 +13,16 @@ This repo has _NO_ affiliation with Google more than using its services. It also
 -  `npm install`
 -  `npm run build && npm start` OR `npm run dev`
 
+Or for running in Docker you can run the following (after you created env variables & user data if needed):
+
+```sh
+docker build -t sftp . && \
+docker run --rm -it \
+	--mount type=bind,source=/path/to/credentials.json,target=/usr/src/app/key.json \
+	-p 9022:9022/tcp \
+	sftp:latest
+```
+
 ### Environment variables
 
 | Name           | Description                                        | Required | Default value                              |
