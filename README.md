@@ -2,6 +2,10 @@
 
 This is a fork of [kolban-google/sftp-gcs](https://github.com/kolban-google/sftp-gcs). See his full ReadMe below, note that the arguments are disabled in this fork.
 
+## Disclaimer
+
+This repo has _NO_ affiliation with Google more than using its services. It also is only tested for one small use case for our specific needs so use with caution and test extensively before relying on this code.
+
 ## Usage
 
 -  First create `.env` in the root file, see description of the variables below.
