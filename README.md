@@ -29,6 +29,23 @@ docker run --rm -it \
 	sftp:latest
 ```
 
+**Running with PM2 for production:**
+
+Follow this tutorial: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04
+
+Short version of it:
+```sh
+sudo npm install pm2@latest -g
+npm run build
+
+# Start SFTP Server
+pm2 start npm -- start
+
+# Restarts sftp server when server reboots
+pm2 startup systemd
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u noahgary --hp /home/noahgary
+```
+
 ### Environment variables
 
 | Name           | Description                                        | Required | Default value                              |
