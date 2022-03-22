@@ -10,6 +10,12 @@ This repo has _NO_ affiliation with Google more than using its services. It also
 
 -  First create `.env` in the root file, see description of the variables below.
 -  Add user data. See `users.example.json` for examles.
+-  Install node 12:
+```
+# Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
 -  `npm install`
 -  `npm run build && npm start` OR `npm run dev`
 
