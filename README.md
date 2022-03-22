@@ -31,7 +31,7 @@ docker run --rm -it \
 
 **Running with PM2 for production:**
 
-Follow this tutorial: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04
+[Follow this tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-20-04)
 
 Short version of it:
 ```sh
